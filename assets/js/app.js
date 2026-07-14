@@ -294,7 +294,7 @@
 
   const buildMailto = (payload) => {
     const config = window.ADVENTURE_DOG_CONFIG || {};
-    const email = config.contactEmail || 'fouchyelias@gmail.com';
+    const email = config?.contactEmail || "fouchyelias@gmail.com";
 ';
     const subject = encodeURIComponent(`Demande de réservation Adventure Dog – ${payload.prestation || 'Prestation'}`);
     const body = encodeURIComponent([
