@@ -294,7 +294,8 @@
 
   const buildMailto = (payload) => {
     const config = window.ADVENTURE_DOG_CONFIG || {};
-    const email = config.contactEmail || 'contact@adventure-dog-serrechevalier.fr';
+    const email = config.contactEmail || 'fouchyelias@gmail.com';
+';
     const subject = encodeURIComponent(`Demande de réservation Adventure Dog – ${payload.prestation || 'Prestation'}`);
     const body = encodeURIComponent([
       `Nom : ${payload.nom || ''}`,
@@ -335,7 +336,7 @@
 
       const payload = formDataToObject(form);
       const config = window.ADVENTURE_DOG_CONFIG || {};
-      const endpoint = String(config.googleAppsScriptUrl || '').trim();
+      const endpoint = "https://script.google.com/macros/s/AKfycbxmv9RLi3QIlJm86oF3aDQoicXigKN7u4JWqkHDG7hYQXRY6KIBsVgm71hHpbrBEEfr9g/exec";
       const submitButton = form.querySelector('button[type="submit"]');
       submitButton.disabled = true;
       submitButton.textContent = 'Envoi en cours…';
