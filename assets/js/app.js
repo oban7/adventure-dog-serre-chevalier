@@ -336,6 +336,44 @@
       const payload = formDataToObject(form);
       const config = window.ADVENTURE_DOG_CONFIG || {};
       const endpoint = "https://script.google.com/macros/s/AKfycbxmv9RLi3QIlJm86oF3aDQoicXigKN7u4JWqkHDG7hYQXRY6KIBsVgm71hHpbrBEEfr9g/exec";
+       const reservationForm = document.querySelector("#reservation-form");
+
+if (reservationForm) {
+  reservationForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const submitButton = reservationForm.querySelector("button[type='submit']");
+    const originalButtonText = submitButton ? submitButton.textContent : "";
+
+    if (submitButton) {
+      submitButton.disabled = true;
+      submitButton.textContent = "Envoi en cours...";
+    }
+
+    const formData = new FormData(reservationForm);
+
+    try {
+      await fetch(RESERVATION_ENDPOINT, {
+        method: "POST",
+        mode: "no-cors",
+        body: formData
+      });
+
+      reservationForm.reset();
+      alert("Votre demande a bien été envoyée. Nous vous répondrons rapidement.");
+
+    } catch (error) {
+      console.error("Erreur lors de l’envoi :", error);
+      alert("Une erreur est survenue. Vous pouvez nous contacter directement par email.");
+
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.textContent = originalButtonText;
+      }
+    }
+  });
+}
       const submitButton = form.querySelector('button[type="submit"]');
       submitButton.disabled = true;
       submitButton.textContent = 'Envoi en cours…';
