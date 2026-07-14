@@ -1,0 +1,114 @@
+/* =========================================================
+   Responsive : navigation horizontale conservée, mobile first respecté.
+   ========================================================= */
+
+@media (max-width: 1120px) {
+  .adventures-grid {
+    grid-template-columns: repeat(5, minmax(280px, 1fr));
+    margin-inline: auto;
+    width: min(calc(100% - 20px), var(--container));
+  }
+
+  .reservation-layout,
+  .faq-layout,
+  .presentation-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-heading { position: static; }
+}
+
+@media (max-width: 860px) {
+  :root { --header-height: 74px; }
+
+  .navbar {
+    align-items: center;
+    gap: 14px;
+    width: calc(100% - 24px);
+  }
+
+  .brand span { display: none; }
+  .brand img { width: 46px; }
+
+  .nav-list {
+    flex: 1 1 auto;
+    justify-content: flex-start;
+    gap: 18px;
+    padding: 8px 0 8px 10px;
+  }
+
+  .nav-list a { font-size: .8rem; }
+
+  .hero {
+    align-items: end;
+    padding-top: 112px;
+    padding-bottom: 92px;
+  }
+
+  .hero-content { text-align: left; }
+  .hero-logo { margin-inline: 0; width: 170px; }
+  .hero-actions { justify-content: flex-start; }
+
+  .tariff-note,
+  .values-grid,
+  .footer-grid,
+  .footer-bottom {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid nav { text-align: left; }
+  .footer-bottom { display: grid; }
+
+  .modal-card {
+    grid-template-columns: 1fr;
+    overflow-y: auto;
+  }
+
+  .modal-card img {
+    height: 260px;
+    min-height: 260px;
+  }
+}
+
+@media (max-width: 640px) {
+  .container { width: min(calc(100% - 28px), var(--container)); }
+
+  .section { padding: 68px 0; }
+
+  .hero-subtitle { font-size: 1.05rem; }
+
+  .btn {
+    width: 100%;
+    min-height: 54px;
+  }
+
+  .hero-actions { width: 100%; }
+
+  .adventures-grid {
+    grid-template-columns: repeat(5, minmax(268px, 1fr));
+    gap: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .adventure-card { min-height: 500px; }
+  .card-content { padding: 22px; }
+
+  .form-row.two-cols { grid-template-columns: 1fr; }
+  .booking-form { border-radius: 24px; }
+
+  .gallery-grid { columns: 1; }
+
+  .portrait-panel img { min-height: 420px; }
+
+  .contact-card strong { font-size: .98rem; }
+}
+
+@media (max-width: 410px) {
+  h1 { font-size: 3.35rem; }
+  h1 span { letter-spacing: .3em; }
+  h2 { font-size: 2.45rem; }
+  .nav-list { gap: 14px; }
+  .nav-list a { font-size: .76rem; }
+}
