@@ -336,7 +336,7 @@
       const payload = formDataToObject(form);
       const config = window.ADVENTURE_DOG_CONFIG || {};
       const endpoint = "https://script.google.com/macros/s/AKfycbxmv9RLi3QIlJm86oF3aDQoicXigKN7u4JWqkHDG7hYQXRY6KIBsVgm71hHpbrBEEfr9g/exec";
-       const reservationForm = document.querySelector("#reservation-form");
+       const reservationForm = document.querySelector("#reservationForm");
 
 if (reservationForm) {
   reservationForm.addEventListener("submit", async function (event) {
