@@ -1,0 +1,63 @@
+/* =========================================================
+   Animations sobres et utiles. Oui, c'est possible.
+   ========================================================= */
+
+@keyframes fadeLogo {
+  from { opacity: 0; transform: scale(.94); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes kenBurns {
+  from { transform: scale(1.06) translate3d(0, 0, 0); }
+  to { transform: scale(1.13) translate3d(-1.2%, -1%, 0); }
+}
+
+@keyframes pawStep {
+  0%, 100% { opacity: .28; transform: translateY(0) rotate(-5deg); }
+  45% { opacity: 1; transform: translateY(11px) rotate(5deg); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes logoEntrance {
+  from { opacity: 0; transform: translateY(18px) scale(.97); filter: blur(4px) brightness(0) invert(1); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0) brightness(0) invert(1); }
+}
+
+.reveal,
+.reveal-logo {
+  opacity: 0;
+  transform: translateY(32px);
+}
+
+.reveal.is-visible {
+  animation: fadeUp .85s var(--ease) both;
+}
+
+.reveal-logo.is-visible {
+  animation: fadeUp 1s var(--ease) .12s both;
+}
+
+.hero-logo {
+  animation: logoEntrance 1.1s var(--ease) .18s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: .001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .001ms !important;
+  }
+
+  .reveal,
+  .reveal-logo {
+    opacity: 1;
+    transform: none;
+  }
+}
