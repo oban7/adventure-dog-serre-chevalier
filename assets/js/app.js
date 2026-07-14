@@ -2,7 +2,7 @@
    Adventure Dog – Serre-Chevalier
    JavaScript sans dépendance externe : navigation, modales, formulaire.
    ========================================================= */
-
+console.log("APP.JS CHARGÉ - TEST ADVENTURE DOG");
 (() => {
   'use strict';
 
