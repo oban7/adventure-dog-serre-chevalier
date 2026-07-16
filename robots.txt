@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://oban7.github.io/adventure-dog-serre-chevalier/sitemap.xml
+Sitemap: https://oban7.github.io/adventure-dog-serre-chevalier/sitemap.xml
